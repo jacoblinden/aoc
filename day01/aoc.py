@@ -1,19 +1,30 @@
-import sys
 from os import environ
 
 
 def getSolutionPart2(input_list):
-    return
+    previous = -1
+    count = 0
+    for i in range(0, len(input_list)-2):
+        depth = input_list[i] + input_list[i+1] + input_list[i+2]
+        count += add(previous, depth)
+        previous = depth
+    return count
 
 
 def getSolutionPart1(input_list):
-    previous = sys.maxsize
+    previous = input_list[0]
     count = 0
-    for depth in input_list:
-        if depth > previous:
-            count += 1
+    for i in range(1, len(input_list)):
+        depth = input_list[i]
+        count += add(previous, depth)
         previous = depth
     return count
+
+
+def add(previous, next):
+    if next > previous & previous != -1:
+        return 1
+    return 0
 
 
 with open('input.txt') as f:
