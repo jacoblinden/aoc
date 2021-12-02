@@ -1,7 +1,19 @@
 from os import environ
 
+
 def getSolutionPart2(input_list):
-    return
+    aim = 0
+    horizontal = 0
+    depth = 0
+    for command in input_list:
+        if "forward" in command:
+            horizontal += int(command[7:])
+            depth += aim*int(command[7:])
+        if "down" in command:
+            aim += int(command[5:])
+        if "up" in command:
+            aim -= int(command[3:])
+    return horizontal * depth
 
 
 def getSolutionPart1(input_list):
