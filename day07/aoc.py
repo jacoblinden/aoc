@@ -24,7 +24,6 @@ with open('input.txt') as f:
     file_input = f.readlines()
     file_input = file_input[0].split(",")
     file_input = list(map(int, file_input))
-    file_input.sort()
 
 
 print('Python')
