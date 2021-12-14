@@ -101,7 +101,6 @@ print('Python')
 part = environ.get('part')
 
 if part == 'part2':
-    print("part2")
+    print(getSolutionPart2(command1, command2))
 else:
     print(getSolutionPart1(command1,command2 ))
-    print(getSolutionPart2(command1,command2))
